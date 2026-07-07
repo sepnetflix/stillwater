@@ -1,0 +1,12 @@
+{
+  "extends": "@stillwater/typescript-config/base",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "noEmit": true,
+    "tsBuildInfoFile": ".turbo/tsconfig.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts", "trigger.config.ts"],
+  "exclude": ["node_modules", "dist", ".turbo"]
+}

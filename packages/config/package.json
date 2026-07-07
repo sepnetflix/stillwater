@@ -1,0 +1,32 @@
+{
+  "name": "@stillwater/config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "@stillwater/source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./env": {
+      "@stillwater/source": "./src/env.ts",
+      "default": "./dist/env.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "tsc --build --watch",
+    "clean": "rm -rf dist .turbo",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@t3-oss/env-core": "^0.13.11",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@stillwater/typescript-config": "workspace:*",
+    "@types/node": "^26.1.0",
+    "typescript": "^5.9.0"
+  }
+}

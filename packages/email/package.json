@@ -1,0 +1,40 @@
+{
+  "name": "@stillwater/email",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "@stillwater/source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./templates/*": {
+      "@stillwater/source": "./src/templates/*.tsx",
+      "default": "./dist/templates/*.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "email dev --dir src/templates --port 3333",
+    "clean": "rm -rf dist .turbo",
+    "check-types": "tsc --noEmit",
+    "preview": "email preview"
+  },
+  "dependencies": {
+    "@stillwater/config": "workspace:*",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-email": "^6.6.6",
+    "resend": "^6.17.1"
+  },
+  "devDependencies": {
+    "@stillwater/typescript-config": "workspace:*",
+    "@types/node": "^26.1.0",
+    "@types/react": "^19.2.17",
+    "typescript": "^5.9.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.7"
+  }
+}
